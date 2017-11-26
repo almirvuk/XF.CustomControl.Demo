@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.CustomControl.Demo.CustomControls.SpeakerCustomControl">
+    <ContentView.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="PhotoUrlImage"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"
+                   HeightRequest="150"
+                   WidthRequest="150"
+                   Grid.RowSpan="2"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         Margin="12,0,0,0"
+                         Grid.Column="1"
+                         Grid.Row="0" >
+
+                <Label x:Name="FullNameLabel"
+                       FontAttributes="Bold"
+                       FontSize="Large" />
+
+                <Label x:Name="PositionLabel"
+                       FontSize="Medium" />
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

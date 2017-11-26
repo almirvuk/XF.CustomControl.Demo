@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.CustomControl.Demo.Views.SpeakersListPage"
+             xmlns:customControl="clr-namespace:XF.CustomControl.Demo.CustomControls"
+             Title="All Speakers">
+
+    <ContentPage.Content>
+
+        <ListView ItemsSource="{Binding AllSpeakers}"
+                  HasUnevenRows="True"
+                  HeightRequest="150">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+
+                        <customControl:SpeakerCustomControl 
+                            FullName="{Binding FullName}"
+                            Position="{Binding Position}"
+                            PhotoUrl="{Binding PhotoUrl}"
+                            />
+                        
+                        
+                        <!-- Old and long xaml code :( -->
+                        <!--   
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Source="{Binding PhotoUrl}"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="StartAndExpand"
+                                   HeightRequest="150"
+                                   WidthRequest="150"
+                                   Grid.RowSpan="2"
+                                   Grid.Column="0"
+                                   Grid.Row="0"/>
+
+                            <StackLayout VerticalOptions="CenterAndExpand"
+                                         Margin="12,0,0,0"
+                                         Grid.Column="1"
+                                         Grid.Row="0" >
+
+                                <Label Text="{Binding FullName}"
+                                       FontAttributes="Bold"
+                                       FontSize="Large" />
+
+                                <Label Text="{Binding Position}"
+                                       FontSize="Medium" />
+                            </StackLayout>
+
+                        </Grid>
+                        
+                    -->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
